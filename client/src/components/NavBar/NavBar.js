@@ -4,14 +4,15 @@ import './styles.css';
 
 import { useState } from 'react';
 
-const NavBar = ({ selectList, setSelectList, showForm, setShowForm }) => {
+const NavBar = ({ selectList, setSelectList, showForm, setShowForm, setShowNav, showNav }) => {
 
     function closeNav() {
-        const nav = document.querySelector('.nav-bar');
-        const container = document.querySelector('.container');
+        // const nav = document.querySelector('.nav-bar');
+        // const container = document.querySelector('.container');
         
-        nav.style.display = 'none';
-        container.style.marginLeft = '0em';
+        // nav.style.display = 'none';
+        // container.style.marginLeft = '0em';
+        setShowNav(false);
     }
 
     function openForm() { 

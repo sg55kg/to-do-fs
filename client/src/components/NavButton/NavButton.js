@@ -1,14 +1,15 @@
 import './styles.css';
 
-const NavButton = () => {
+const NavButton = ({ setShowNav, showNav }) => {
 
-    function openNavBar(e) {
-        const nav = document.querySelector('.nav-bar');
-        const container = document.querySelector('.container');
+    function openNavBar() {
+        
+        // const nav = document.querySelector('.nav-bar');
+        // const container = document.querySelector('.container');
 
-        nav.style.display = 'inline-flex';
-        container.style.marginLeft = '17.4em';
-    
+        // nav.style.display = 'inline-flex';
+        // container.style.marginLeft = '17.4em';
+        setShowNav(true);
     }
 
 

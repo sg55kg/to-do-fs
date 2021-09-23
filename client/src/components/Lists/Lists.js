@@ -28,7 +28,7 @@ const Lists = ({ selectList, setSelectList}) => {
             {lists.map((list) => (
                 <div key={lists._id} className="list-nav">
                     <button className="list-select-nav" onClick={() => setSelectList(list._id)}>{list.title}</button>
-                    <button className="delete-list-nav" onClick={() => handleDelete(list)}>X</button>       
+                    <button className="delete-list-nav" onClick={() => handleDelete(list._id)}>X</button>       
                 </div>
             ))}
             </div>

@@ -22,9 +22,16 @@ const App = () => {
 
     return (
         <div className="container">
-            <Header setShowNav={setShowNav} />
+            <Header setShowNav={setShowNav} showNav={showNav} />
             <Body selectList={selectList} />
-            <NavBar setSelectList={setSelectList} selectList={selectList} showForm={showForm} setShowForm={setShowForm} />
+            {showNav ? <NavBar 
+                setSelectList={setSelectList} 
+                selectList={selectList} 
+                showForm={showForm} 
+                setShowForm={setShowForm} 
+                setShowNav={setShowNav} 
+                showNav={showNav}
+                /> : null}
             <Form />
             <Footer />
         </div>
