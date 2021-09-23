@@ -1,7 +1,9 @@
 import * as api from '../api';
 
+
 //Action creators
 export const getLists = () => async (dispatch) => {
+
     try {
         const { data } = await api.fetchLists();
 
