@@ -1,0 +1,8 @@
+.body {
+    background-color: rgba(20, 138, 185,1);
+    width: 100%;
+    transition: margin-left .2s;
+    height: 100vh;
+    overflow-x: hidden;
+    margin: 0;
+}

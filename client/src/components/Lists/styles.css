@@ -1,0 +1,32 @@
+.lists-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.list-nav {
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    border-left: 0;
+    border-right: 0;
+    background-color: inherit;
+    width: 100%;
+    height: 2.7em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-nav:hover {
+    /* border-bottom: 2px solid rgb(107, 106, 106); */
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+.list-select-nav {
+    border: none;
+    background-color: inherit;
+}
+
+.delete-list-nav {
+    border: none;
+    background-color: inherit;
+}

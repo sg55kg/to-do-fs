@@ -1,0 +1,9 @@
+.nav-button {
+    width: 5em;
+    background-color: rgb(11, 167, 240);
+    border: none;
+}
+
+.nav-button:hover {
+    background-color: rgb(7, 144, 207);
+}

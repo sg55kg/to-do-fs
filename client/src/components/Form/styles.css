@@ -1,0 +1,8 @@
+.form {
+    background-color: white;
+    width: 70%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-items: center;
+    margin: auto;
+}

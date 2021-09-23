@@ -1,0 +1,6 @@
+.header {
+    background-color: rgb(11, 167, 240);
+    color: white;
+    font:1.5em 'Shadows Into Light', cursive;
+    display: flex;
+}
