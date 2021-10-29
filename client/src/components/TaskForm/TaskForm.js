@@ -7,18 +7,11 @@ import { updateList } from '../../actions/lists';
 const TaskForm = ({ showTaskForm, setShowTaskForm, selectList }) => {
     
     const dispatch = useDispatch();
-    // const lists = useSelector((state) => state.lists);
-    // const tasks = useSelector((state) => state.lists.tasks);
+    const lists = useSelector((state) => state.lists);
+    const task = useSelector((state) => state.lists.tasks);
 
-    const [task, setTask] = useState({ tasks: [] });
+    const [tasks, setTasks] = useState({ name: '', priority: 0, description: '', dueBy: ''});
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        dispatch(updateList(selectList, task));
-
-        setShowTaskForm(false);
-    }
 
     const cancelSubmit = (e) => {
         e.preventDefault();
@@ -26,38 +19,43 @@ const TaskForm = ({ showTaskForm, setShowTaskForm, selectList }) => {
         setShowTaskForm(false);
     }
 
-    // const addNewTask = (i) => {
-
-    //     let newTask = [...task];
-    //     newTask[index] = e.target.value;
-    //     setTask([newTask]);
-    // }   
+    const addNewTask = (e) => {
+        e.preventDefault();
+       
+        try {
+            dispatch(updateList(selectList, tasks));
+        } catch (error) {
+            console.log(error);
+        }
+        
+        setShowTaskForm(false);
+    }   
 
     return (
         <form className="task-form">
             <h3>Add a task to this list</h3> {/*get this list name and replace 'list' with {list.title}*/ }
 
             <label>Task name:</label>     
-            <input type="text" onChange={(e) => setTask({
-                ...task, 
-                [name]: [...task[name], e.target.value]})}></input>
+            <input type="text"
+            value={tasks.name}
+            onChange={(e) => setTasks({...tasks, name: e.target.value})}></input>
 
             <label>Set task priority:</label>
-            <input type="number" onChange={(e) => setTask({
-                ...task, 
-                [priority]: [...task[priority], e.target.value]})}></input>
+            <input type="number"
+            value={tasks.priority}
+            onChange={(e) => setTasks({...tasks, priority: e.target.value})}></input>
 
             <label>Description:</label>
-            <input type="text" onChange={(e) => setTask({
-                ...task, 
-                [description]: [...task[description], e.target.value]})}></input>
+            <input type="text"
+            value={tasks.description} 
+            onChange={(e) => setTasks({...tasks, description: e.target.value})}></input>
 
             <label>When does this need to be finished?</label>
-            <input type="date" onChange={(e) => setTask({
-                ...task, 
-                [dueBy]: [...task[dueBy], e.target.value]})}></input>
+            <input type="date"
+            value={tasks.dueBy} 
+            onChange={(e) => setTasks({...tasks, description: e.target.value})}></input>
 
-            <button className="submit-new-task" onClick={handleSubmit}>Add Task</button>
+            <button className="submit-new-task" onClick={addNewTask}>Add Task</button>
             <button className="cancel-submit-task" onClick={cancelSubmit}>Cancel</button>
         </form>
     )
