@@ -22,7 +22,7 @@ const List = ({ selectList, showTaskForm, setShowTaskForm }) => {
             <h1 className="list-title">{list.title}</h1>
             <h3>Created on: {list.createdOn}</h3>
             <h2>Tasks: </h2>
-            <Tasks />
+            <Tasks selectList={selectList} />
             <button onClick={openTaskForm}>Add new task</button>
             <button onClick={() => dispatch(deleteList(list._id))}>Delete list</button>
             {showTaskForm ? <TaskForm showTaskForm={showTaskForm} setShowTaskForm={setShowTaskForm} selectList={selectList} /> : null}

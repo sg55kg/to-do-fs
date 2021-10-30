@@ -1,9 +1,7 @@
-import List from './List/List';
 import './styles.css'
 
 import { CircularProgress } from '@material-ui/core';
 import { useSelector } from 'react-redux';
-import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { deleteList } from '../../actions/lists';
@@ -14,12 +12,12 @@ const Lists = ({ selectList, setSelectList}) => {
 
     console.log(lists);
 
-    const handleDelete = (id) => {
+    // const handleDelete = (id) => {
         
-        console.log(id);
-        dispatch(deleteList(id));
+    //     console.log(id);
+    //     dispatch(deleteList(id));
   
-    }
+    // }
 
 
     return (

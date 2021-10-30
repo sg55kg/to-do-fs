@@ -4,8 +4,9 @@ import { getTasks } from '../../actions/tasks';
 
 import Task from './Task';
 
-const Tasks = () => {
+const Tasks = ({ selectList }) => {
     const tasks = useSelector((state) => state.tasks);
+    const list = useSelector((state) => selectList ? state.lists.find((l) => l._id === selectList) : null);
     const dispatch = useDispatch();
 
     
@@ -16,16 +17,15 @@ const Tasks = () => {
 
     console.log(tasks);
 
-    if(tasks)
+    const filteredTasks = tasks.filter((task) => task.listId === list._id);
+
+    if(filteredTasks.length > 0) {
         return (
             <>
-            {tasks.map((task) => {
-                return (
-                    <Task key={task._id} task={task} />
-                )
-            })}
+            {filteredTasks.map((task) => { return <Task task={task} />})}
             </>
         )
+    }
     else
         return (
             <h3>No tasks added yet</h3>
