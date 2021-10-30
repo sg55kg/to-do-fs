@@ -14,7 +14,10 @@ const TaskSchema = new Schema({
         type: Date,
         default: new Date()
     },
-    listId: String,
+    listId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'ListMessage'
+    }
 }, { collection: 'Task' })
 
 const Task = mongoose.model('Task', TaskSchema);

@@ -31,7 +31,7 @@ export const updateList = (id, list) => async (dispatch) => {
     } catch (error) {
         console.log(error);
     }
-}
+} //foreign key
 
 export const deleteList = (id) => async (dispatch) => {
     try {

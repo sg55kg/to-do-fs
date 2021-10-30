@@ -1,21 +1,18 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
 
-import { updateList } from '../../actions/lists';
+import { createTask } from '../../actions/tasks';
+
 
 const TaskForm = ({ showTaskForm, setShowTaskForm, selectList }) => {
     
     const dispatch = useDispatch();
-    const lists = useSelector((state) => state.lists);
-    const task = useSelector((state) => state.lists.tasks);
 
-    const [tasks, setTasks] = useState({ name: '', priority: 0, description: '', dueBy: ''});
+    const [tasks, setTasks] = useState({ name: '', priority: 0, description: '', dueBy: '', listId: selectList });
 
 
     const cancelSubmit = (e) => {
         e.preventDefault();
-
         setShowTaskForm(false);
     }
 
@@ -23,7 +20,7 @@ const TaskForm = ({ showTaskForm, setShowTaskForm, selectList }) => {
         e.preventDefault();
        
         try {
-            dispatch(updateList(selectList, tasks));
+            dispatch(createTask(tasks));
         } catch (error) {
             console.log(error);
         }
@@ -53,7 +50,7 @@ const TaskForm = ({ showTaskForm, setShowTaskForm, selectList }) => {
             <label>When does this need to be finished?</label>
             <input type="date"
             value={tasks.dueBy} 
-            onChange={(e) => setTasks({...tasks, description: e.target.value})}></input>
+            onChange={(e) => setTasks({...tasks, dueBy: e.target.value})}></input>
 
             <button className="submit-new-task" onClick={addNewTask}>Add Task</button>
             <button className="cancel-submit-task" onClick={cancelSubmit}>Cancel</button>

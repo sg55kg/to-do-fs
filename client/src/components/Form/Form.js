@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 
 import './styles.css';
 import { createLists } from '../../actions/lists';
-import NavBar from '../NavBar/NavBar';
 
 const Form = ({ setShowForm }) => {
 

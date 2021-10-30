@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 export default (lists = [], action) => {
     switch (action.type) {
         case 'FETCH_ALL':
