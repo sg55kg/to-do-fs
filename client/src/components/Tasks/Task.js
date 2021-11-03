@@ -1,10 +1,24 @@
+import { useState } from 'react';
+
+import './styles.css';
+
 const Task = ({ task }) => {
+    const [showMore, setShowMore] = useState(false);
+
     return (
-        <>
-        <h3>{task.name}</h3>
-        <h3>{task.priority}</h3>
-        <h3>{task.dueBy}</h3>
-        </>
+        <div className="task-div" onClick={() => showMore ? setShowMore(false) : setShowMore(true)}>
+            <div className="task-header">
+                <h3>{task.name}</h3>
+                <h3 className="task-priority">{task.priority}</h3>
+            </div>
+            {showMore &&
+            <div className="task-info">
+                <h3>Finish by:</h3>
+                <h3>{new Date(task.dueBy).toLocaleDateString("en-US")}</h3>
+                <h5>{task.description}</h5>
+            </div>
+            }
+        </div>
     )
 }
 

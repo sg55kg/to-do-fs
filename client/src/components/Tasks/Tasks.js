@@ -9,7 +9,7 @@ const Tasks = ({ selectList }) => {
     const list = useSelector((state) => selectList ? state.lists.find((l) => l._id === selectList) : null);
     const dispatch = useDispatch();
 
-    
+    const filteredTasks = tasks.filter((task) => task.listId === list._id);
 
     useEffect(() => {
         dispatch(getTasks());
@@ -17,9 +17,10 @@ const Tasks = ({ selectList }) => {
 
     console.log(tasks);
 
-    const filteredTasks = tasks.filter((task) => task.listId === list._id);
+    
 
     if(filteredTasks.length > 0) {
+        filteredTasks.sort((a, b) => {return (a.priority - b.priority)});
         return (
             <>
             {filteredTasks.map((task) => { return <Task task={task} />})}

@@ -16,12 +16,14 @@ const List = ({ selectList, showTaskForm, setShowTaskForm }) => {
         setShowTaskForm(true);
     }
 
-    if(list) //does not display tasks, because it needs to make a call to fetch tasks
+    if(list) 
     return (
         <div className="body-container">
-            <h1 className="list-title">{list.title}</h1>
-            <h3>Created on: {list.createdOn}</h3>
-            <h2>Tasks: </h2>
+            <div className="list-header">
+                <h1 className="list-title">{list.title}</h1>
+                <h3>Created on: {new Date(list.createdOn).toLocaleDateString("en-US")}</h3>
+            </div>
+            <h2 style={{ textAlign: 'center' }}>Tasks: </h2>
             <Tasks selectList={selectList} />
             <button onClick={openTaskForm}>Add new task</button>
             <button onClick={() => dispatch(deleteList(list._id))}>Delete list</button>

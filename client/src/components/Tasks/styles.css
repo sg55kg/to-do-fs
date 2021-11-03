@@ -1,0 +1,33 @@
+.task-div {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    font: 1em 'Roboto-mono', monospace;
+    border-bottom: 1px solid black;
+    padding-left: .5em;
+    padding-right: .5em;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+.task-div:hover {
+    background-color: rgb(173, 172, 172);
+    border-radius: 1em;
+}
+
+.task-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.task-priority {
+    align-self: flex-end;
+    width: 1em;
+}
+
+.task-info {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}

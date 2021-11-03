@@ -2,7 +2,6 @@ import Header from './components/Header/Header';
 import Body from './components/Body/Body';
 import Footer from './components/Footer/Footer';
 import NavBar from './components/NavBar/NavBar';
-import Form from './components/Form/Form';
 
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
@@ -32,7 +31,6 @@ const App = () => {
                 setShowNav={setShowNav} 
                 showNav={showNav}
                 /> : null}
-            <Form />
             <Footer />
         </div>
     )

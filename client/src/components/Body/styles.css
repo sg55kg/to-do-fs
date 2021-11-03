@@ -2,7 +2,9 @@
     background-color: rgba(20, 138, 185,1);
     width: 100%;
     transition: margin-left .2s;
-    height: 100vh;
+    /* height: 100vh; */
     overflow-x: hidden;
+    overflow-y: scroll;
     margin: 0;
+    margin-bottom: 4em;
 }
