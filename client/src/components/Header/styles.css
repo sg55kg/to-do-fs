@@ -4,3 +4,23 @@
     font:1.5em 'Shadows Into Light', cursive;
     display: flex;
 }
+
+.header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.time-info {
+    font-family: 'Roboto-mono', monospace;
+    padding-right: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.time-info > h4 {
+    margin-top: .5em;
+    margin-bottom: .25em;
+}

@@ -9,7 +9,8 @@ const Tasks = ({ selectList }) => {
     const list = useSelector((state) => selectList ? state.lists.find((l) => l._id === selectList) : null);
     const dispatch = useDispatch();
 
-    const filteredTasks = tasks.filter((task) => task.listId === list._id);
+    const matchingTasks = tasks.filter((task) => task.listId === list._id);
+    const currentDay = new Date();
 
     useEffect(() => {
         dispatch(getTasks());
@@ -19,11 +20,16 @@ const Tasks = ({ selectList }) => {
 
     
 
-    if(filteredTasks.length > 0) {
-        filteredTasks.sort((a, b) => {return (a.priority - b.priority)});
+    if(matchingTasks.length > 0) {
+        matchingTasks.sort((a, b) => {return (a.priority - b.priority)}); 
+        const currentTasks = matchingTasks.filter((task) => new Date(task.dueBy) >= currentDay);
+        const overDueTasks = matchingTasks.filter((task) => new Date(task.dueBy) < currentDay);
         return (
             <>
-            {filteredTasks.map((task) => { return <Task task={task} />})}
+            {currentTasks.map((task) => { return <Task task={task} />})}
+            <h2 style={{ textAlign: 'center' }}>Overdue tasks: </h2>
+            {overDueTasks.map((task) => { return <Task task={task} />})}
+            <h2 style={{ textAlign: 'center' }}>Completed tasks: </h2>
             </>
         )
     }
