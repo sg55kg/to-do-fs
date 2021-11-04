@@ -31,7 +31,7 @@ export const updateTask = async (req, res) => {
 
     if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No task with that id exists');
 
-    const updatedTask = await ListMessage.findByIdAndUpdate(id, { ...task, id }, { new: true });
+    const updatedTask = await Task.findByIdAndUpdate(id, { ...task, id }, { new: true });
 
     res.json(updatedTask);
 }

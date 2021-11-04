@@ -6,6 +6,7 @@ const TaskSchema = new Schema({
     name: String,
     priority: Number,
     description: String,
+    isComplete: Boolean,
     createdOn: {
         type: Date,
         default: new Date()

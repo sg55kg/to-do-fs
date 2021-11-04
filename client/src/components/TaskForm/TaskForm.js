@@ -8,7 +8,7 @@ const TaskForm = ({ showTaskForm, setShowTaskForm, selectList }) => {
     
     const dispatch = useDispatch();
 
-    const [tasks, setTasks] = useState({ name: '', priority: 0, description: '', dueBy: '', listId: selectList });
+    const [tasks, setTasks] = useState({ name: '', priority: 0, description: '', isComplete: false, dueBy: '', listId: selectList });
 
 
     const cancelSubmit = (e) => {

@@ -17,3 +17,13 @@ export const createTask = (task) => async (dispatch) => {
         console.log(error);
     }
 }
+
+export const updateTask = (id, task) => async (dispatch) => {
+    try {
+        const { data } = await api.updateTask(id, task);
+        dispatch({ type: 'UPDATE', payload: data });
+        console.log('action fired')
+    } catch (error) {
+        console.log(error);
+    }
+}
