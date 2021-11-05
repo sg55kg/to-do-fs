@@ -13,6 +13,7 @@
 .task-div:hover {
     background-color: rgb(173, 172, 172);
     border-radius: 1em;
+    /* color: #c8f8bc */
 }
 
 .task-header {

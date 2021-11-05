@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { updateTask } from '../../actions/tasks';
@@ -23,8 +23,16 @@ const Task = ({ task }) => {
         console.log(complete)
     }
 
+    const setBackgroundColor = () => {
+        if (task.isComplete) {
+            return '#c8f8bc';
+        } else if (currentDate > taskDueDate) {
+            return '#f7b1b1';
+        }
+    }
+
     return (
-        <div className="task-div" >
+        <div className="task-div" style={{ backgroundColor: setBackgroundColor()  }}>
             <div className="task-header" onClick={() => showMore ? setShowMore(false) : setShowMore(true)}>
                 <h3>{task.name}</h3>
                 {currentDate.getMonth() + currentDay === taskDueDate.getMonth() + taskDueDay ? <h4>Due today</h4> : null}

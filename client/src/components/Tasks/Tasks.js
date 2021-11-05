@@ -28,11 +28,11 @@ const Tasks = ({ selectList }) => {
 
         return (
             <>
-            {currentTasks.map((task) => { return <Task task={task} />})}
+            {currentTasks.length > 0 ? currentTasks.map((task) => { return <Task task={task} />}) : <h4>No current tasks</h4>}
             <h2 style={{ textAlign: 'center' }}>Overdue tasks: </h2>
-            {overDueTasks.map((task) => { return <Task task={task} />})}
+            {overDueTasks.length > 0 ? overDueTasks.map((task) => { return <Task task={task} />}) : <h4>No overdue tasks</h4>}
             <h2 style={{ textAlign: 'center' }}>Completed tasks: </h2>
-            {completeTasks.map((task) => { return <Task task={task} />})}
+            {completeTasks.length > 0 ? completeTasks.map((task) => { return <Task task={task} />}) : <h4>No tasks completed</h4>}
             </>
         )
     }

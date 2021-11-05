@@ -22,8 +22,8 @@ const App = () => {
     return (
         <div className="container">
             <Header setShowNav={setShowNav} showNav={showNav} />
-            <Body selectList={selectList} />
-            {showNav ? <NavBar 
+            <Body selectList={selectList} /> 
+            {showNav ? <NavBar /* move nav bar into body to add display effect*/ 
                 setSelectList={setSelectList} 
                 selectList={selectList} 
                 showForm={showForm} 
