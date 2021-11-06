@@ -25,8 +25,10 @@ const List = ({ selectList, showTaskForm, setShowTaskForm }) => {
             </div>
             <h2 style={{ textAlign: 'center' }}>Tasks: </h2>
             <Tasks selectList={selectList} />
-            <button onClick={openTaskForm}>Add new task</button>
-            <button onClick={() => dispatch(deleteList(list._id))}>Delete list</button>
+            <div className="task-form-btns">
+                <button className="add-new-task-btn" onClick={openTaskForm}>Add new task</button>
+                <button className="delete-list-btn" onClick={() => dispatch(deleteList(list._id))}>Delete list</button>
+            </div>
             {showTaskForm ? <TaskForm showTaskForm={showTaskForm} setShowTaskForm={setShowTaskForm} selectList={selectList} /> : null}
         </div>
     )

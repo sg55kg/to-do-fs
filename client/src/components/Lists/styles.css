@@ -28,4 +28,12 @@
 .delete-list-nav {
     border: none;
     background-color: inherit;
+    align-self: center;
+    margin-right: 0.5em;
+}
+
+.delete-list-nav:hover {
+    background-color: rgb(212, 211, 211);
+    /* color: white; */
+    border-radius: 50%;
 }

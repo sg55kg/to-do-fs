@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { createTask } from '../../actions/tasks';
 
@@ -7,7 +7,7 @@ import { createTask } from '../../actions/tasks';
 const TaskForm = ({ showTaskForm, setShowTaskForm, selectList }) => {
     
     const dispatch = useDispatch();
-
+    const list = useSelector((state) => selectList ? state.lists.find((l) => l._id === selectList) : null);
     const [tasks, setTasks] = useState({ name: '', priority: 0, description: '', isComplete: false, dueBy: '', listId: selectList });
 
 
@@ -30,7 +30,7 @@ const TaskForm = ({ showTaskForm, setShowTaskForm, selectList }) => {
 
     return (
         <form className="task-form">
-            <h3>Add a task to this list</h3> {/*get this list name and replace 'list' with {list.title}*/ }
+            <h3>{`Add a task to ${list.title}`}</h3> 
 
             <label>Task name:</label>     
             <input type="text"

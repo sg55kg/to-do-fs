@@ -1,10 +1,12 @@
 .body-container {
+    box-sizing: border-box;
     background-color: white;
     border-radius: 6px;
     width: 75%;
     height:max-content;
     margin: auto;
     margin-top: 3em;
+    margin-bottom: 3em;
 }
 
 .list-header {
@@ -14,4 +16,37 @@
     padding-left: .7em;
     padding-right: .7em;
     padding-top: .5em;
+}
+
+.task-form-btns {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+}
+
+.add-new-task-btn {
+    width: 16%;  
+    padding: .7em;
+    margin: .35em;
+    background-color: rgb(128, 191, 243);
+    font: 1em 'Roboto-mono', monospace;
+    border: none;
+    border-radius: 1em;
+}
+
+.add-new-task-btn:hover {
+    background-color: rgb(139, 207, 238);
+}
+
+.delete-list-btn {
+    background-color: inherit;
+    border: none;
+    font-family: 'Roboto-mono', monospace;
+}
+
+.delete-list-btn:hover {
+    text-decoration: underline;
+    color: red;
 }

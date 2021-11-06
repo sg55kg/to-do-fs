@@ -1,9 +1,9 @@
-.task-div {
+.task-div, .overdue-task-div, .complete-task-div {
     width: 90%;
     display: flex;
     flex-direction: column;
     font: 1em 'Roboto-mono', monospace;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(196, 193, 193);
     padding-left: .5em;
     padding-right: .5em;
     margin-left: .5em;
@@ -11,9 +11,32 @@
 }
 
 .task-div:hover {
-    background-color: rgb(173, 172, 172);
-    border-radius: 1em;
-    /* color: #c8f8bc */
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+.overdue-task-div {
+    background-color: #f7b1b1;
+    border-bottom: 1px solid #b64747;
+    z-index: 0;
+    position: relative;
+}
+
+.overdue-task-div:hover {
+    box-shadow: 0 4px 2px -2px #610f0f ;
+    z-index: 10;
+}
+
+.complete-task-div {
+    background-color: #c8f8bc;
+    border-bottom: 1px solid #4d883f ;
+    z-index: 0;
+    position: relative;
+}
+
+.complete-task-div:hover {
+    z-index: 10;
+    box-shadow: 0 4px 2px -2px #22662e;
+    
 }
 
 .task-header {
@@ -31,4 +54,9 @@
     display: flex;
     flex-direction: column;
     align-self: flex-start;
+    width: 100%;
+    background-color: rgb(230, 225, 225);
+    margin-bottom: 1em;
+    justify-items: center;
 }
+

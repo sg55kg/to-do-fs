@@ -23,7 +23,7 @@ const Tasks = ({ selectList }) => {
     if(matchingTasks.length > 0) {
         matchingTasks.sort((a, b) => {return (a.priority - b.priority)}); 
         const currentTasks = matchingTasks.filter((task) => new Date(task.dueBy) >= currentDay && !task.isComplete);
-        const overDueTasks = matchingTasks.filter((task) => new Date(task.dueBy) < currentDay);
+        const overDueTasks = matchingTasks.filter((task) => new Date(task.dueBy) < currentDay && !task.isComplete);
         const completeTasks = matchingTasks.filter((task) => task.isComplete === true)
 
         return (
