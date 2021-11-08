@@ -13,6 +13,7 @@
     align-items: center;
     overflow-y: scroll;
     max-height: 70vh;
+    box-shadow: .3em .2em 1em 0em rgb(56, 55, 77);
 }
 
 .list-header {

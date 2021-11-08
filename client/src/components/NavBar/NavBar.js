@@ -10,6 +10,8 @@ const NavBar = ({ selectList, setSelectList, showForm, setShowForm, setShowNav, 
 
     function closeNav() {
         setShowNav(false);
+        setShowCreateBtn(true);
+        setShowForm(false);
     }
 
     function openForm() { 
