@@ -3,9 +3,9 @@
     background-color: rgba(20, 138, 185,1);
     width: 100%;
     transition: margin-left .2s;
-    /* height: 100vh; */
+    height: 90%;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y:unset;
     margin: 0;
     margin-bottom: 4em;
 }

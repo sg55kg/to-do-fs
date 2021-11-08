@@ -3,6 +3,12 @@
     color: white;
     font:1.5em 'Shadows Into Light', cursive;
     display: flex;
+    height: 4em;
+}
+
+.header-content > h1 {
+    align-self: center;
+    padding-left: 1em;
 }
 
 .header-content {

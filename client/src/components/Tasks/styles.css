@@ -45,6 +45,10 @@
     justify-content: space-between;
 }
 
+.task-header:hover {
+    cursor: pointer;
+}
+
 .task-priority {
     align-self: flex-end;
     width: 1em;

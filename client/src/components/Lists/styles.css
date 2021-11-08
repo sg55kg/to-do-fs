@@ -25,6 +25,10 @@
     background-color: inherit;
 }
 
+.list-select-nav:hover{
+    cursor: pointer;
+}
+
 .delete-list-nav {
     border: none;
     background-color: inherit;
@@ -34,6 +38,6 @@
 
 .delete-list-nav:hover {
     background-color: rgb(212, 211, 211);
-    /* color: white; */
-    border-radius: 50%;
+    color: rgb(248, 4, 4);
+    cursor: pointer;
 }

@@ -1,7 +1,6 @@
 import Header from './components/Header/Header';
 import Body from './components/Body/Body';
 import Footer from './components/Footer/Footer';
-import NavBar from './components/NavBar/NavBar';
 
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
@@ -22,15 +21,11 @@ const App = () => {
     return (
         <div className="container">
             <Header setShowNav={setShowNav} showNav={showNav} />
-            <Body selectList={selectList} /> 
-            {showNav ? <NavBar /* move nav bar into body to add display effect*/ 
-                setSelectList={setSelectList} 
-                selectList={selectList} 
+            <Body selectList={selectList} setSelectList={setSelectList}
                 showForm={showForm} 
                 setShowForm={setShowForm} 
                 setShowNav={setShowNav} 
-                showNav={showNav}
-                /> : null}
+                showNav={showNav}/> 
             <Footer />
         </div>
     )

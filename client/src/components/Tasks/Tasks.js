@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getTasks } from '../../actions/tasks';
+import { BsJournalCheck, BsExclamationTriangle } from 'react-icons/bs';
 
 import Task from './Task';
 
@@ -29,9 +30,9 @@ const Tasks = ({ selectList }) => {
         return (
             <>
             {currentTasks.length > 0 ? currentTasks.map((task) => { return <Task task={task} />}) : <h4>No current tasks</h4>}
-            <h2 style={{ textAlign: 'center' }}>Overdue tasks: </h2>
+            <h2 style={{ textAlign: 'center' }}><BsExclamationTriangle /> Overdue tasks: </h2>
             {overDueTasks.length > 0 ? overDueTasks.map((task) => { return <Task task={task} />}) : <h4>No overdue tasks</h4>}
-            <h2 style={{ textAlign: 'center' }}>Completed tasks: </h2>
+            <h2 style={{ textAlign: 'center' }}><BsJournalCheck /> Completed tasks: </h2>
             {completeTasks.length > 0 ? completeTasks.map((task) => { return <Task task={task} />}) : <h4>No tasks completed</h4>}
             </>
         )

@@ -2,20 +2,35 @@
     box-sizing: border-box;
     background-color: white;
     border-radius: 6px;
-    width: 75%;
+    width: 80%;
     height:max-content;
     margin: auto;
     margin-top: 3em;
     margin-bottom: 3em;
+    font-family: 'Roboto-mono', monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    max-height: 70vh;
 }
 
 .list-header {
     display: flex;
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     padding-left: .7em;
     padding-right: .7em;
     padding-top: .5em;
+}
+
+.list-header > h1 {
+    margin-left: 1em;
+}
+
+.list-header > h3 {
+    margin-right: 1em;
 }
 
 .task-form-btns {

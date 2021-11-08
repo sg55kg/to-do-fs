@@ -1,7 +1,7 @@
 .nav-bar {
-  position: fixed;
-  height: 100%;
-  /* display: none; */
+  position:absolute;
+  height: 102vh;
+  display: none;
   flex-direction: column;
   flex-wrap: wrap;
   width: 17em;
@@ -9,19 +9,32 @@
   left: 0;
   background-color: white;
   border: .2em solid grey;
-  z-index: 1;
+  z-index: 200;
 }
 
 .nav-bar > h3 {
   border-bottom: 1px solid grey;
   margin-bottom: 0;
-  margin-top: 3em;
+  margin-top: 2em;
+  padding-bottom: .75em;
+  padding-left: .5em;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .close-nav {
   position:absolute;
   top: 0;
   right: 0;
+  background-color: inherit;
+  border: none;
+  width: 3em;
+  padding: .5em;
+}
+
+.close-nav:hover{
+  background-color: rgb(212, 211, 211);
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .add-new-list {

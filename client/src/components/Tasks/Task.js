@@ -31,6 +31,7 @@ const Task = ({ task }) => {
                 {currentDate.getMonth() + currentDay === taskDueDate.getMonth() + taskDueDay ? <h4>Due today</h4> : null}
                 <h3 className="task-priority">{task.priority}</h3>
             </div>
+            
             {showMore &&
             <div className="task-info">
                 <h3>{`Finish by: ${new Date(task.dueBy).toLocaleDateString("en-US")}`}</h3>

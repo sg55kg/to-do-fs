@@ -4,11 +4,9 @@ import { useDispatch } from 'react-redux';
 import './styles.css';
 import { createLists } from '../../actions/lists';
 
-const Form = ({ setShowForm }) => {
+const Form = ({ setShowForm, setShowCreateBtn }) => {
 
-    const [listData, setListData] = useState({
-            title: '',
-        })
+    const [listData, setListData] = useState({ title: '' })
 
     const dispatch = useDispatch();
 
@@ -18,18 +16,20 @@ const Form = ({ setShowForm }) => {
         dispatch(createLists(listData))
 
         setShowForm(false);
+        setShowCreateBtn(true);
     }
 
     const cancelSubmit = (e) => {
         e.preventDefault();
 
         setShowForm(false);
+        setShowCreateBtn(true);
     }
 
     return (
         <form className="form">
-            <h5>Create new list</h5>
-            <label>Enter list name</label>
+            <h4>Create new list</h4>
+            <h5>Enter list name</h5>
             <input 
                 type="text" 
                 value={listData.title}

@@ -1,8 +1,17 @@
 .form {
     background-color: white;
     width: 70%;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-items: center;
+    text-align: center;
     margin: auto;
+}
+
+.form > input {
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.form > button {
+    margin-top: 1em;
 }

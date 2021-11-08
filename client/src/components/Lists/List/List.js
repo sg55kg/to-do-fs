@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { BsListCheck, BsFillCalendarFill } from 'react-icons/bs';
 
 import TaskForm from '../../TaskForm/TaskForm';
 import Tasks from '../../Tasks/Tasks';
@@ -21,9 +22,9 @@ const List = ({ selectList, showTaskForm, setShowTaskForm }) => {
         <div className="body-container">
             <div className="list-header">
                 <h1 className="list-title">{list.title}</h1>
-                <h3>Created on: {new Date(list.createdOn).toLocaleDateString("en-US")}</h3>
+                <h3><BsFillCalendarFill /> Created on: {new Date(list.createdOn).toLocaleDateString("en-US")}</h3>
             </div>
-            <h2 style={{ textAlign: 'center' }}>Tasks: </h2>
+            <h2 style={{ textAlign: 'center', alignSelf: 'center' }}><BsListCheck style={{ }} /> Tasks:</h2>
             <Tasks selectList={selectList} />
             <div className="task-form-btns">
                 <button className="add-new-task-btn" onClick={openTaskForm}>Add new task</button>
